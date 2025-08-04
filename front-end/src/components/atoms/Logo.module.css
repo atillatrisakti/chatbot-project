@@ -1,0 +1,14 @@
+.logoContainer {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-color);
+}
+
+.logoText {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
