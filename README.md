@@ -18,7 +18,7 @@ An intelligent web-based chatbot application powered by Gemini AI, capable of re
 
 ### Front-end
 
-- **Framework:** React
+- **Library:** React
 - **Language:** JavaScript
 - **Styling:** CSS Modules
 - **Design System:** Atomic Design
