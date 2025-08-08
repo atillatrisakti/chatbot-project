@@ -1,15 +1,17 @@
-import React, { useState } from 'react';
-import styles from './MessageBubble.module.css';
-import Markdown from 'react-markdown';
-import UserIcon from '../../assets/icons/UserIcon';
-import BotIcon from '../../assets/icons/BotIcon';
-import CopyIcon from '../../assets/icons/CopyIcon';
-import CheckIcon from '../../assets/icons/CheckIcon';
+import React, { useState } from "react";
+import styles from "./MessageBubble.module.css";
+import Markdown from "react-markdown";
+import UserIcon from "../../assets/icons/UserIcon";
+import BotIcon from "../../assets/icons/BotIcon";
+import CopyIcon from "../../assets/icons/CopyIcon";
+import CheckIcon from "../../assets/icons/CheckIcon";
 
 const MessageBubble = ({ message, role, file }) => {
   const [isCopied, setIsCopied] = useState(false);
-  const isUser = role === 'user';
-  const bubbleContainerClass = isUser ? styles.userContainer : styles.aiContainer;
+  const isUser = role === "user";
+  const bubbleContainerClass = isUser
+    ? styles.userContainer
+    : styles.aiContainer;
 
   const handleCopy = () => {
     navigator.clipboard.writeText(message).then(() => {
@@ -25,10 +27,18 @@ const MessageBubble = ({ message, role, file }) => {
         <div className={styles.bubble}>
           {file && (
             <div className={styles.fileContainer}>
-              {file.type.startsWith('image/') ? (
-                <img src={URL.createObjectURL(file)} alt="Attachment" className={styles.attachedImage} />
+              {file.type.startsWith("image/") ? (
+                <img
+                  src={URL.createObjectURL(file)}
+                  alt="Attachment"
+                  className={styles.attachedImage}
+                />
               ) : (
-                <audio controls src={URL.createObjectURL(file)} className={styles.attachedAudio} />
+                <audio
+                  controls
+                  src={URL.createObjectURL(file)}
+                  className={styles.attachedAudio}
+                />
               )}
             </div>
           )}
